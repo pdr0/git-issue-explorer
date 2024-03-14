@@ -1,0 +1,12 @@
+.repo-input {
+    text-align: center;
+}
+
+.repo-input button{
+    display: block;
+    margin: 20px auto;
+}
+
+.repo-input input {
+    min-width: 320px;
+}
