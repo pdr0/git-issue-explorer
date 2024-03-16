@@ -1,19 +1,28 @@
-import { useGitHubStateContext, GitHubState } from '../../contexts/MainContext';
+import { useEffect } from 'react';
+import { useGitHubStateContext, GitHubState, GitHubActionTypes, useGitHubDispatchContext } from '../../contexts/MainContext';
+import { Link } from 'react-router-dom';
+import { GitIssue } from '../../../definitions';
 
-type GitHubIssue = {
-  id: string,
-  html_url: string,
-  title: string
-}
 
 const GitHubIssues = () => {
   const gitHubState: GitHubState = useGitHubStateContext();
+  const gitHubDispatch = useGitHubDispatchContext();
+  useEffect(()=> {console.log('STATE',gitHubState)}, [gitHubState])
+
+  const handleClick = (issueNumber: number) => {
+    gitHubDispatch({
+      type: GitHubActionTypes.SET_ISSUE_NUMBER,
+      payload: {
+        issueNumber
+      },
+    })
+  }
   
   return (
       <ul>
-        {gitHubState.issues?.map((issue: GitHubIssue) => (
-          <li key={issue.id}>
-            <a href={issue.html_url} target="_blank" rel="noopener noreferrer">{issue.title}</a>
+        {gitHubState.issues?.map((issue: GitIssue) => (
+          <li key={issue.number}>
+            <Link to={'/issue'} onClick={()=> handleClick(issue.number)}>{issue.title}</Link>
           </li>
         ))}
       </ul>    

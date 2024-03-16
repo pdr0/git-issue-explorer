@@ -13,7 +13,9 @@ export const MainDispatchContext = createContext(defaultMainContext);
 
 
 export const GitHubActionTypes = {
-    SET_GITHUB_DATA: 'SET_GITHUB_DATA'
+    SET_GITHUB_DATA: 'SET_GITHUB_DATA',
+    SET_ISSUE_NUMBER: 'SET_ISSUE_NUMBER'
+
 }
 
 // Action 
@@ -34,7 +36,8 @@ export interface GitHubState {
   respositoryUrl: string,
   owner: string,
   name: string,
-  issues: any // TODO Create a Record
+  issues: unknown // TODO Create a Record
+  issueNumber: number
 }
 
 type Dispatch = (action: GitHubAction) => void;
@@ -59,7 +62,7 @@ export const useGitHubDispatchContext = () => {
 };
 
 const init = {
-    name: 'foo0', owner:'foo1', url:'foo2'
+    name: '', owner:'', url:''
   }
 
 export const MainProvider = ({ children }: any) => {
