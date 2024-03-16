@@ -7,7 +7,7 @@ import './IssueOverview.scss';
 
 const IssueOverview = () => {
   const gitHubState: GitHubState = useGitHubStateContext();
-  const [issue, setIssue] = useState('empty');
+  const [issue, setIssue] = useState();
   let issueNumber = 0;
   console.log('STATE',gitHubState)
 
@@ -20,11 +20,11 @@ const IssueOverview = () => {
     
   return (
       <div className='repo-input'>
-        <ul>
+        {issue && (<ul>
         {Object.entries(issue).map(([key, value]) => (
           <li key={key}>{`${key}: ${value}`}</li>
           ))}
-        </ul>
+        </ul>)}
         <Link to={'/'}>Back</Link>
       </div>    
   );

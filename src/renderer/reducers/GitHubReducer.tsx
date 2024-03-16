@@ -6,7 +6,6 @@ export const GitHubReducer = (state: GitHubState, action: GitHubAction) => {
     
     case GitHubActionTypes.SET_GITHUB_DATA: {
       const {payload}  = action 
-      console.log(action.payload)
       return {
         ...state,
         ...payload
