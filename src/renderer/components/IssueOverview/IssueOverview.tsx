@@ -20,12 +20,12 @@ const IssueOverview = () => {
     
   return (
       <div className='repo-input'>
-        <Link to={'/'}>HOME</Link>
         <ul>
         {Object.entries(issue).map(([key, value]) => (
-          <p key={key}>{`${key}: ${value}`}</p>
-        ))}
+          <li key={key}>{`${key}: ${value}`}</li>
+          ))}
         </ul>
+        <Link to={'/'}>Back</Link>
       </div>    
   );
 };
