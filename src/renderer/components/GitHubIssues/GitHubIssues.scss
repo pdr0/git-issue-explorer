@@ -1,3 +1,20 @@
-.git-hub-issues-container {
+.git-hub-issues {
     text-align: left;
+
+    li {
+        font-size: 20px;
+        background-color: rgba(128,114,167,0.2);
+        margin: 2px 0;
+        border-radius: 5px;
+        a {
+            color: white;
+            font-size: 17px;
+        }
+        span{
+            font-size: 13px;
+            position: relative;
+            top: -4px;
+            padding-left: 4px;
+        }
+    }
 }

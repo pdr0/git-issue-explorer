@@ -1,12 +1,20 @@
 .repo-input {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.repo-input label {
+    margin: 0 auto;
     text-align: center;
 }
 
-.repo-input button{
-    display: block;
-    margin: 20px auto;
-}
-
 .repo-input input {
+    display: block;
+    margin-top: 20px;
     min-width: 320px;
 }
+
+.repo-input div{
+    flex:0 0 auto;
+  }

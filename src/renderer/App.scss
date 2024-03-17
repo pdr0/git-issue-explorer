@@ -2,7 +2,10 @@
  * @NOTE: Prepend a `~` to css file paths that are in your node_modules
  *        See https://github.com/webpack-contrib/sass-loader#imports
  */
-body {
+
+@import './styles/normalize';
+
+ body {
   position: relative;
   color: white;
   height: 100vh;
@@ -13,10 +16,11 @@ body {
     #7a2c9e 129.35%
   );
   font-family: sans-serif;
-  overflow-y: hidden;
+  overflow-y: scroll;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 40px 0;
 }
 
 button {

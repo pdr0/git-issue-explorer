@@ -3,6 +3,7 @@ import { useGitHubStateContext, GitHubState, GitHubActionTypes, useGitHubDispatc
 import { Link } from 'react-router-dom';
 import { GitIssue } from '../../../definitions';
 
+import './GitHubIssues.scss'
 
 const GitHubIssues = () => {
   const gitHubState: GitHubState = useGitHubStateContext();
@@ -19,9 +20,10 @@ const GitHubIssues = () => {
   }
   
   return (
-      <ul>
+      <ul className='git-hub-issues'>
         {gitHubState.issues?.map((issue: GitIssue) => (
           <li key={issue.number}>
+            <span>{issue.state}</span>
             <Link to={'/issue'} onClick={()=> handleClick(issue.number)}>{issue.title}</Link>
           </li>
         ))}
