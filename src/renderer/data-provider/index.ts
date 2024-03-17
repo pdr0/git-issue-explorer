@@ -1,6 +1,5 @@
 import { GitIssue } from "../../definitions";
 
-
 export const fetchIssues = async (repositoryOwner: string, repositoryName: string ) => {
     try {
       const url = `https://api.github.com/repos/${repositoryOwner}/${repositoryName}/issues`

@@ -1,48 +1,26 @@
-/*
- * @NOTE: Prepend a `~` to css file paths that are in your node_modules
- *        See https://github.com/webpack-contrib/sass-loader#imports
+/* TODO: 
+ - Create a webpack Loader for SCSS Modules to use {styles.[class]} at component level
+ - Folder structure for variables
+ - Add clx for styles switch based on application/component state 
  */
 
-@import './styles/normalize';
+@import "./styles/normalize";
 
- body {
+body {
   position: relative;
   color: white;
   height: 100vh;
-  background: linear-gradient(
-    200.96deg,
-    #fedc2a -29.09%,
-    #dd5789 51.77%,
-    #7a2c9e 129.35%
-  );
+  background: linear-gradient(200.96deg, #fedc2a -29.09%, #dd5789 51.77%, #7a2c9e 129.35%);
   font-family: sans-serif;
   overflow-y: scroll;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin: 40px 0;
+  align-items: flex-start;
+  margin: 40px;
 }
 
-button {
-  background-color: white;
-  padding: 10px 20px;
-  border-radius: 10px;
-  border: none;
-  appearance: none;
-  font-size: 1.3rem;
-  box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
-    0px 18px 88px -4px rgba(24, 39, 75, 0.14);
-  transition: all ease-in 0.1s;
-  cursor: pointer;
-  opacity: 0.9;
-}
 h1 {
   text-align: center;
-}
-
-button:hover {
-  transform: scale(1.05);
-  opacity: 1;
 }
 
 li {
@@ -59,11 +37,4 @@ a {
 a:hover {
   opacity: 1;
   text-decoration: none;
-}
-
-.Hello {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
 }

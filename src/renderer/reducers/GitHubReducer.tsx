@@ -14,7 +14,6 @@ export const GitHubReducer = (state: GitHubState, action: GitHubAction) => {
 
     case GitHubActionTypes.SET_ISSUE_NUMBER: {
       const {payload}  = action 
-      console.log('SET_ISSUE_NUMBER',action.payload)
       return {
         ...state,
         ...payload

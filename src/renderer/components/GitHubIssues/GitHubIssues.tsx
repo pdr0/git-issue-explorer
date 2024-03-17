@@ -8,7 +8,6 @@ import './GitHubIssues.scss'
 const GitHubIssues = () => {
   const gitHubState: GitHubState = useGitHubStateContext();
   const gitHubDispatch = useGitHubDispatchContext();
-  useEffect(()=> {console.log('STATE',gitHubState)}, [gitHubState])
 
   const handleClick = (issueNumber: number) => {
     gitHubDispatch({

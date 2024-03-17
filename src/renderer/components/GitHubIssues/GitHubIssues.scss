@@ -1,6 +1,6 @@
 .git-hub-issues {
     text-align: left;
-
+    padding: 0;
     li {
         font-size: 20px;
         background-color: rgba(128,114,167,0.2);
@@ -9,6 +9,9 @@
         a {
             color: white;
             font-size: 17px;
+            &:hover {
+                color: cornflowerblue;
+            }
         }
         span{
             font-size: 13px;

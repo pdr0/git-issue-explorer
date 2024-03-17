@@ -24,7 +24,7 @@ function Home() {
 
 export default function App() {
   return (
-    <MainProvider value={init}>
+    <MainProvider>
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
