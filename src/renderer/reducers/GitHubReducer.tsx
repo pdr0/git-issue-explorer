@@ -1,24 +1,30 @@
-import { act } from "react-test-renderer";
-import { GitHubState, GitHubAction, GitHubActionTypes } from "../contexts/MainContext";
+import { GitHubState, GitHubAction } from '../../definitions';
+
+export const GitHubActionTypes = {
+  SET_GITHUB_DATA: 'SET_GITHUB_DATA',
+  SET_ISSUE_NUMBER: 'SET_ISSUE_NUMBER',
+};
 
 export const GitHubReducer = (state: GitHubState, action: GitHubAction) => {
-    switch (action.type) {
-    
+  switch (action.type) {
     case GitHubActionTypes.SET_GITHUB_DATA: {
-      const {payload}  = action 
+      const { payload } = action;
       return {
         ...state,
-        ...payload
-      };
-    } break;
-
-    case GitHubActionTypes.SET_ISSUE_NUMBER: {
-      const {payload}  = action 
-      return {
-        ...state,
-        ...payload
+        ...payload,
       };
     }
-  }
 
+    case GitHubActionTypes.SET_ISSUE_NUMBER: {
+      const { payload } = action;
+      return {
+        ...state,
+        ...payload,
+      };
+    }
+
+    default: {
+      return { ...state };
+    }
+  }
 };
