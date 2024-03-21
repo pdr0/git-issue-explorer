@@ -14,7 +14,7 @@ export interface GitHubState {
   respositoryUrl: string;
   owner: string;
   name: string;
-  issues: unknown; // TODO Create a Record
+  issues: GitIssue[];
   issueNumber: number;
 }
 
